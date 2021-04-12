@@ -13,7 +13,7 @@
  *
  */
 function isMAC48Address(n) {
-  return /[\d|A-F]{2}-[\d|A-F]{2}-[\d|A-F]{2}-[\d|A-F]{2}-[\d|A-F]{2}-[\d|A-F]{2}/.test(n);
+  return !n.match(/([^A-F\d-])/gm);
 }
 
 module.exports = isMAC48Address;
